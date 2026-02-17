@@ -78,7 +78,7 @@ let g:ale_linters={
 \ 'rust': ['analyzer'],
 \ 'zsh': ['shellcheck'],
 \}
-let g:ale_open_list=1
+let g:ale_open_list=0
 let g:ale_keep_list_window_open=0
 let g:ale_python_auto_uv=1
 " }}}
@@ -124,6 +124,7 @@ augroup rust
 	autocmd FileType rust nnoremap <buffer> <localleader>c I//<space><esc>
 	autocmd FileType rust :setlocal shiftwidth=4 tabstop=4 softtabstop=4
 	autocmd FileType rust :setlocal statusline=%f,%n%=%l/%L,%c,%p%%
+	autocmd FileType rust :setlocal foldmethod=indent
 	autocmd FileType rust :iabbrev <buffer> iff if{}<left><left>
 augroup END
 " }}}
